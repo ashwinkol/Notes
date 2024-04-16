@@ -3,7 +3,7 @@
 This project provides an overview of Java data types, literals, operators, defining classes, and access modifiers. It aims to serve as a reference for beginners and intermediate Java developers.
 
 
-![Java Data Types](https://github.com/ashwinkol/Notes/blob/main/Java%20Notes/images/Complete-set-of-Java-DATA-TYPES.png)
+[![Java Data Types](/Java%20Notes/images/Complete-set-of-Java-DATA-TYPES.png)](https://github.com/ashwinkol/Notes/tree/main/)
 
 
 
