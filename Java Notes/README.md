@@ -91,6 +91,43 @@ In Java, operators are symbols that perform operations on operands (variables, v
 
 ---
 
+# Arithmetic Operator Precedence in Java
+
+1. **Parentheses: `()`**
+   - Parentheses have the highest precedence and are used to explicitly specify the order of operations.
+
+2. **Unary Operators: `+`, `-`**
+   - Unary plus (`+`) and unary minus (`-`) operators are applied to individual operands.
+
+3. **Multiplication, Division, Modulus: `*`, `/`, `%`**
+   - Multiplication (`*`), division (`/`), and modulus (`%`) operators have the same precedence and are evaluated from left to right.
+
+4. **Addition and Subtraction: `+`, `-`**
+   - Addition (`+`) and subtraction (`-`) operators have the same precedence and are evaluated from left to right.
+
+### Example:
+
+Consider the following expression:
+
+```java
+int result = 10 * 2 + 5 - 3 / 2;
+```
+
+In this expression:
+1. `3 / 2` is evaluated first due to the higher precedence of multiplication, division, and modulus.
+2. Then, `10 * 2`, `5`, and `-` are evaluated from left to right.
+3. Finally, `+` and `-` are evaluated from left to right.
+
+To make the order of operations explicit, you can use parentheses:
+
+```java
+int result = ((10 * 2) + 5) - (3 / 2);
+```
+
+This ensures that `10 * 2` and `3 / 2` are evaluated first due to the parentheses.
+
+---
+
 # Type Casting In Java
 
 - Implicit Casting (Widening)
@@ -232,10 +269,6 @@ In Java, conditional statements allow you to control the flow of your program ba
 
 These conditional statements provide you with the flexibility to execute different blocks of code based on various conditions, making your programs more dynamic and responsive.
 
-
----
-
-Here's the adjusted content for your README.md:
 
 ---
 
