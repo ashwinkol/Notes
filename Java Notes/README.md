@@ -5,7 +5,7 @@
 This project provides an overview of Java data types, literals, operators, defining classes, and access modifiers. It aims to serve as a reference for beginners and intermediate Java developers.
 
 
-![Java Data Types][JavaNotesURL](images/Complete-set-of-Java-DATA-TYPES.png)
+![Java Data Types][JavaNotesURL](Complete-set-of-Java-DATA-TYPES.png)
 
 
 
