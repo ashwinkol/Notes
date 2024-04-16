@@ -93,6 +93,22 @@ In Java, operators are symbols that perform operations on operands (variables, v
 
 # Arithmetic Operator Precedence in Java
 
+
+## Arithmetic Operator Precedence in Java
+
+1. **Multiplication: `*`**
+   - Multiplication has higher precedence than division, addition, and subtraction.
+
+2. **Division: `/`**
+   - Division has higher precedence than addition and subtraction, but lower precedence than multiplication.
+
+3. **Addition: `+`**
+   - Addition has higher precedence than subtraction.
+
+4. **Subtraction: `-`**
+   - Subtraction has the lowest precedence among arithmetic operators.
+
+
 1. **Parentheses: `()`**
    - Parentheses have the highest precedence and are used to explicitly specify the order of operations.
 
@@ -316,6 +332,79 @@ To define the above 4 levels, we have 3 keywords:
 
 
 ---
+
+# Wrapper Classes in Java
+
+
+The classes used to represent primitive values as objects are called wrapper classes. In the `java.lang` package, there are 8 wrapper classes, one for each primitive type, to represent them as objects. Among them, 6 wrapper classes represent number type values and are known as number wrapper classes. These 6 number wrapper classes are subclasses of the abstract class `Number`. This class has `xxxValue()` methods to read primitive values from wrapper class objects. Except for `byteValue()` and `shortValue()`, the remaining 4 methods are abstract methods as they are methods of an abstract class. These 6 methods are implemented in all 6 number wrapper classes by returning the current object's internal primitive value.
+
+Wrapper classes in Java are used to represent primitive data types as objects. They provide a way to treat primitive data types as objects, enabling various operations such as comparison, storage in collections, and passing as arguments in methods.
+
+### List of Wrapper Classes:
+
+1. **Byte**: `java.lang.Byte`
+2. **Short**: `java.lang.Short`
+3. **Integer**: `java.lang.Integer`
+4. **Long**: `java.lang.Long`
+5. **Float**: `java.lang.Float`
+6. **Double**: `java.lang.Double`
+7. **Character**: `java.lang.Character`
+8. **Boolean**: `java.lang.Boolean`
+
+Wrapper classes provide methods to convert primitive data types to and from strings, perform arithmetic operations, and check for various properties of the values they represent.
+
+For example, you can create an `Integer` object from an `int` primitive data type like this:
+
+```java
+Integer number = Integer.valueOf(10);
+```
+
+And you can convert an `Integer` object back to an `int` primitive data type like this:
+
+```java
+int value = number.intValue();
+```
+
+Wrapper classes are commonly used when working with collections like `ArrayList` or `HashMap`, as these collections require objects rather than primitive data types. Additionally, wrapper classes are useful for handling null values, as primitive data types cannot be null but wrapper classes can.
+
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/WrapperClass.png )](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+
+### Need of Wrapper Classes:
+
+Wrapper classes are primarily used in projects to perform conversion operations. There are 6 conversion operations:
+
+1. **AutoBoxing**: Converting a primitive type into a wrapper class object automatically.
+
+2. **AutoUnboxing**: Converting a wrapper class object into a primitive type automatically.
+
+### AutoBoxing and AutoUnboxing:
+
+As per AutoBoxing and AutoUnBoxing, primitive values can be assigned to wrapper class referenced variables and wrapper class objects can be assigned to primitive variables directly. The required conversion is done automatically by the compiler.
+
+**Q**: Who performs AutoBoxing and UnBoxing, the Compiler or JVM?
+
+**Ans**: AutoBoxing and AutoUnBoxing are performed by the Compiler based on the primitive literal. This feature requires code added to the compiler software. Therefore, the JVM does not handle this feature.
+
+**AutoBoxing**:
+Let's understand how the compiler performs AutoBoxing in the following statement:
+
+```java
+Integer io = 50;
+```
+
+In the above line, the compiler converts `Integer io` to `Integer.valueOf(50)`, converting the int literal 50 to an Integer object. So, in the ".class" file, we do not have 50 as an int literal; it is stored as an Integer object. Thus, the JVM processes the value 50 as an Integer object.
+
+**Q**: On what basis does the compiler convert primitive values to wrapper class objects?
+
+**Ans**: The compiler converts primitive values to wrapper class objects based on the type of primitive value. For example, `int` is converted to `Integer`, `float` to `Float`, `char` to `Character`, and `boolean` to `Boolean`.
+
+---
+
 
 
 
