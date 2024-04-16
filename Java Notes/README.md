@@ -11,6 +11,14 @@ This project provides an overview of Java data types, literals, operators, defin
 
 Java supports various data types such as integer, floating-point, character, boolean, etc. Data literals represent constant values in code. Understanding data types and literals is fundamental for programming in Java.
 
+- Item 1
+- Item 2
+  - Subitem 1
+  - Subitem 2
+- Item 3
+
+
+
 ## Operators in Java
 
 Operators in Java are symbols that perform operations on variables and values. These include arithmetic operators (+, -, *, /), relational operators (==, !=, >, <), logical operators (&&, ||, !), etc. Knowing how to use operators effectively is crucial for manipulating data in Java programs.
