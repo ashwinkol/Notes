@@ -1,5 +1,72 @@
 # Java Basic Elements
 
+# Variable in Java
+
+### Understanding Variable and Method Execution in Java
+
+### Variable Execution vs. Method Execution
+
+In Java, there's a distinction between executing a variable and executing a method:
+
+**Executing a Variable:**
+
+Executing a variable involves creating a memory location for the variable with an initialized value. The Java Virtual Machine (JVM) automatically executes variables when the variable creation statement appears in the program, i.e., by reading its value.
+
+**Executing a Method:**
+
+Executing a method means executing the logic defined within the method. The JVM does not execute method logic automatically. It executes the method only when the method calling statement appears, not merely by defining the method logic.
+
+
+**Q.** What is the difference between executing a variable and executing a method?
+
+Executing a variable: Executing a variable means creating variable memory location wit Initialized value. Jvm executes variables automatically when variable creation statemer appears in the program. l.e., reading its value.
+
+Executing a method: It means executing method logic. Jvm does not execute method log Buting jadically. It executes method only when that method calling statement appears and not b using just definition l.e., executing that method logic
+
+---
+
+## Types of Variables
+
+Based on class scopes, variables in Java are divided into three types:
+
+### Local Variables
+
+- Local variables are declared in methods, constructors, or blocks.
+- They are created when the method, constructor, or block is entered and destroyed once it exits.
+- Access modifiers cannot be used for local variables, and they are visible only within the declared method, constructor, or block.
+- Local variables are implemented at the stack level internally.
+- They must be declared and initialized before use, as there is no default value for them.
+
+### Instance Variables
+
+
+Instance variables are declared within a class directly, but not outside a method, constructor, or any block. When space is allocated for an object in the heap, a slot for each instance variable value is created.
+
+Instance variables are created when an object is created with the use of the keyword 'new' and destroyed when the object is destroyed. They hold values that must be referenced by more than one method, constructor, or block, or essential parts of an object, allowing the state to be present throughout the class.
+
+Instance variables can be declared at the class level before or after use. Access modifiers can be given for instance variables. Normally, it is recommended to make these variables private (access level), however, visibility for subclasses can be given for these variables with the use of access modifiers.
+
+Instance variables have default values: 0 for numbers, false for Booleans, and null for object references. Values can be assigned during declaration or within the constructor.
+
+Instance variables can be accessed directly by calling the variable name inside the class. However, within static methods and different classes (when instance variables are given accessibility), they should be called using the fully qualified name: `ObjectReference.VariableName`.
+
+- Instance variables are declared within a class but not within a method, constructor, or block.
+- They are created when an object is created and destroyed when the object is destroyed.
+- Instance variables hold values referenced by more than one method, constructor, or block and are present throughout the class.
+- They can be accessed directly within the class and are typically recommended to be private.
+- Instance variables have default values (0 for numbers, false for Booleans, null for object references), which can be assigned during declaration or within the constructor.
+
+
+
+### Class/Static Variables
+
+- Class or static variables are shared among all instances of a class.
+- They are declared using the `static` keyword and retain their values throughout the class's lifetime.
+- Class variables can be accessed directly using the class name and are typically recommended to be private.
+
+
+
+
 ## Data Types And Literals
 
 In Java, data types represent the type of data that can be stored in variables. Here are the main data types in Java:
@@ -382,7 +449,7 @@ Wrapper classes are primarily used in projects to perform conversion operations.
 
 2. **AutoUnboxing**: Converting a wrapper class object into a primitive type automatically.
 
-### AutoBoxing and AutoUnboxing:
+## AutoBoxing and AutoUnboxing:
 
 As per AutoBoxing and AutoUnBoxing, primitive values can be assigned to wrapper class referenced variables and wrapper class objects can be assigned to primitive variables directly. The required conversion is done automatically by the compiler.
 
@@ -402,6 +469,34 @@ In the above line, the compiler converts `Integer io` to `Integer.valueOf(50)`, 
 **Q**: On what basis does the compiler convert primitive values to wrapper class objects?
 
 **Ans**: The compiler converts primitive values to wrapper class objects based on the type of primitive value. For example, `int` is converted to `Integer`, `float` to `Float`, `char` to `Character`, and `boolean` to `Boolean`.
+
+---
+
+## Auto Promotion 
+
+
+In Java, autopromotion refers to the automatic conversion of lower-sized primitive data types to higher-sized ones when they are involved in expressions or assignments. This conversion is done by the Java compiler to prevent data loss and ensure that the operation is carried out using the higher precision data type.
+
+```java
+class Test {
+public static void main(String[] args) {
+    byte a = 10;
+    byte b = 20;
+    
+    byte c = a + b;
+    
+    System.out.println(c);
+   }
+}
+
+```
+
+
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/ImplicitTypeCasting.jpg)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
 
 ---
 
