@@ -840,3 +840,69 @@ Programmer
 
 </div>
 ---
+
+# Object Cloning in Java
+
+Object cloning in Java is a way to create an exact copy of an object. This is done using the `clone()` method provided by the `Object` class.
+
+### Why use `clone()` method?
+
+Using the `clone()` method saves time and effort required for creating a duplicate object. Instead of manually copying each field, `clone()` provides a quick way to do so.
+
+### How to use `clone()` method?
+
+To use `clone()`, the class of the object to be cloned must implement the `Cloneable` interface. Otherwise, calling `clone()` will result in a `CloneNotSupportedException`.
+
+The syntax of the `clone()` method is:
+
+```java
+protected Object clone() throws CloneNotSupportedException
+```
+
+### Advantages of Object Cloning
+
+- **Simplicity**: Saves you from writing lengthy and repetitive code for copying objects.
+- **Efficiency**: Fastest way to copy objects, especially beneficial for existing or old projects.
+- **Array Copying**: Efficiently copies arrays.
+
+### Disadvantages of Object Cloning
+
+- **Syntax Changes**: Requires modifying code syntax, including implementing `Cloneable`, defining `clone()`, handling exceptions, etc.
+- **Limited Control**: Lack of control over object construction as `clone()` doesn't invoke constructors.
+- **Inheritance Constraints**: Superclasses must define or inherit `clone()`.
+- **Shallow Copying**: Supports only shallow copying, requiring override for deep cloning.
+
+### Example
+
+Here's a simple example demonstrating the usage of `clone()` method:
+
+```java
+class Student implements Cloneable {  
+    int rollno;  
+    String name;  
+  
+    Student(int rollno, String name) {  
+        this.rollno = rollno;  
+        this.name = name;  
+    }  
+  
+    public Object clone() throws CloneNotSupportedException {  
+        return super.clone();  
+    }  
+  
+    public static void main(String args[]) {  
+        try {  
+            Student s1 = new Student(101, "John");  
+            Student s2 = (Student) s1.clone();  
+  
+            System.out.println(s1.rollno + " " + s1.name);  
+            System.out.println(s2.rollno + " " + s2.name);  
+  
+        } catch (CloneNotSupportedException c) {}  
+    }  
+}
+```
+
+In the example, `s2` is a clone of `s1`, with both objects having the same values. This demonstrates how `clone()` can efficiently copy object values without explicit code.
+
+---
