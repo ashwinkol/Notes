@@ -697,24 +697,22 @@ Constructor executed
 
 ## What jvm does internally when an object is created?
 
-# Object Creation Process in Java
-
-### Memory Allocation:
+### 1. Memory Allocation:
 When an object is created using the `new` keyword, memory is allocated for the object on the heap.
 
-### Initialization of Fields:
+### 2. Initialization of Fields:
 - All non-static variables (instance variables) of the object are initialized with their default values. If there are explicit initializations present, those values are assigned.
 - If there are any static variables or static initialization blocks in the class, they are executed in the order they appear in the class definition. Static variables are initialized only once, when the class is loaded into memory.
 
-### Execution of Non-Static Initialization Blocks:
+### 3. Execution of Non-Static Initialization Blocks:
 - After the static initialization is completed, if there are any non-static variables or non-static initialization blocks in the class, they are executed in the order they appear in the class definition. These blocks are executed each time an object of the class is created.
 
-### Execution of Constructor:
+### 4. Execution of Constructor:
 - After the non-static initialization is completed, the constructor of the class is executed.
 - Constructors are responsible for further initialization of the object, performing any additional setup, and potentially assigning initial values to instance variables.
 - Constructors can be overloaded, so depending on which constructor is called during object creation, different initialization logic may be executed.
 
-### Completion of Object Creation:
+### 5. Completion of Object Creation:
 - Once the constructor finishes execution, the object creation process is considered complete.
 - At this point, the object is fully initialized and ready for use in the program.
 
@@ -740,11 +738,11 @@ responsibility of new keyword is :
 
 ---
 
-# Java Clone Deep Copy and Shallow Copy 
+## Java Clone Deep Copy and Shallow Copy 
 
 Clone is a Greek word meaning "branch". In java, though clone is 'intended' to produce a copy of the same object it is not guaranteed. Clone comes with lots of if's and buts. Hence my first advice is to not depend on clones
 
-## Shallow Copy : 
+### Shallow Copy : 
 Shallow copy is a bit-wise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object refers to other objects, just the reference address are copied i.e only the memory address is copied.
 
 
@@ -757,7 +755,7 @@ Shallow copy is a bit-wise copy of an object. A new object is created that has a
 In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a shallow copy of MainObject1, MainObject2 is created with "field3" containing the copied value of "field1" and still pointing to ContainObject1 itself. Here you will find that as field1 is of primitive type, the values of it are copied to field3 but ContainedObject1 is an object, so MainObject2 is still pointing to ContainObject1. Therefore any changes made to ContainObject1 in MainObject1 will reflect in MainObject2.
 
 
-## Deep Copy :
+### Deep Copy :
 
 A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to, by the fields. A deep copy occurs when an object is copied along with the objects to which it refers
 
