@@ -697,11 +697,27 @@ Constructor executed
 
 ## What jvm does internally when an object is created?
 
-- Object creation process: 
+# Object Creation Process in Java
 
-When we create an object -first the control is sent to invoked constructor, but its logic will not be executed. Instead non-static variables and non-static blocks are executed first in the order they are defined from top to bottom, then constructor logic is executed.
+### Memory Allocation:
+When an object is created using the `new` keyword, memory is allocated for the object on the heap.
 
-If all non-static variables and non-static blocks object creation is completed.
+### Initialization of Fields:
+- All non-static variables (instance variables) of the object are initialized with their default values. If there are explicit initializations present, those values are assigned.
+- If there are any static variables or static initialization blocks in the class, they are executed in the order they appear in the class definition. Static variables are initialized only once, when the class is loaded into memory.
+
+### Execution of Non-Static Initialization Blocks:
+- After the static initialization is completed, if there are any non-static variables or non-static initialization blocks in the class, they are executed in the order they appear in the class definition. These blocks are executed each time an object of the class is created.
+
+### Execution of Constructor:
+- After the non-static initialization is completed, the constructor of the class is executed.
+- Constructors are responsible for further initialization of the object, performing any additional setup, and potentially assigning initial values to instance variables.
+- Constructors can be overloaded, so depending on which constructor is called during object creation, different initialization logic may be executed.
+
+### Completion of Object Creation:
+- Once the constructor finishes execution, the object creation process is considered complete.
+- At this point, the object is fully initialized and ready for use in the program.
+
 
 
 ## Responsibilities of new keyword and constructor in creating object 
