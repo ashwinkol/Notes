@@ -708,7 +708,7 @@ responsibility of new keyword is :
 
 ---
 
-# Java Clone Depp Copy and Shallow Copy 
+# Java Clone Deep Copy and Shallow Copy 
 
 Clone is a Greek word meaning "branch". In java, though clone is 'intended' to produce a copy of the same object it is not guaranteed. Clone comes with lots of if's and buts. Hence my first advice is to not depend on clones
 
