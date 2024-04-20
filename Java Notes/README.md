@@ -738,7 +738,15 @@ A deep copy copies all fields, and makes copies of dynamically allocated memory 
 
 In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a deep copy of MainObject1, MainObject2 is created with "field3" containing the copied value of "field1" and "ContainObject2" containing the copied value of ContainObject1.So any changes made to ContainObject1 in MainObject1 will not reflect in MainObject2
 
-## Ex: 
+### Differences Between Shallow Copy and Deep Copy
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/deepCopyVsShallowCopy.png)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+
+## Example: 
 
 ```java
 class Employee implements Cloneable {
