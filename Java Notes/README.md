@@ -538,26 +538,26 @@ Example obj1 = new Example();
 
 **Q.** Can We Define a Method with the Same Class Name?
 
-Yes, it is allowed to define a method with the same class name. However, it is not recommended as per coding standards.
+- Yes, it is allowed to define a method with the same class name. However, it is not recommended as per coding standards.
 
 **Q.** How compiler and jvm can differentiate constructor and method definitions  if both have same class name?
 
-By using return type, if there is a return type it is considered as method else it is considered as a constructor.
+- By using return type, if there is a return type it is considered as method else it is considered as a constructor.
 
-When we place return type in the construstor prototype compiler and jvm condider it as a method.
+- When we place return type in the construstor prototype compiler and jvm condider it as a method.
 
 
 **Q.** How compiler and jvm can differentiate constructor and method invocations if both have same class name?
 
-By using new keyword, if new keyword is used in calling then constructor is executed, else method is executed.
+- By using new keyword, if new keyword is used in calling then constructor is executed, else method is executed.
 
 **Q.** Can we declare constructor as private?
 
-Yes, we can declare constructor as private. All four accessibility modifiers are allowed for constructor. We should declare constructor as private to not allow the user to create object from outside of class. Basically we will declare constructor as private to implement Singleton design pattern. 
+- Yes, we can declare constructor as private. All four accessibility modifiers are allowed for constructor. We should declare constructor as private to not allow the user to create object from outside of class. Basically we will declare constructor as private to implement Singleton design pattern. 
 
 **Q.** Is constructor definition mandatory in class?
 
-No, it is optional .If we do not define constructor compiler defines constructor.
+- No, it is optional .If we do not define constructor compiler defines constructor.
 
 ## Types of Constructors
  Java supports three types of constructors:
@@ -695,7 +695,7 @@ Instance initialization block executed
 Constructor executed
 ```
 
-## What jvm does internally when an object is created?
+**Q.** What jvm does internally when an object is created?
 
 ### 1. Memory Allocation:
 When an object is created using the `new` keyword, memory is allocated for the object on the heap.
@@ -752,7 +752,9 @@ Shallow copy is a bit-wise copy of an object. A new object is created that has a
 
 </div>
 
-In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a shallow copy of MainObject1, MainObject2 is created with "field3" containing the copied value of "field1" and still pointing to ContainObject1 itself. Here you will find that as field1 is of primitive type, the values of it are copied to field3 but ContainedObject1 is an object, so MainObject2 is still pointing to ContainObject1. Therefore any changes made to ContainObject1 in MainObject1 will reflect in MainObject2.
+In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a shallow copy of MainObject1, MainObject2 is created with "field2" containing the copied value of "field1" and still pointing to ContainObject1 itself. 
+
+Here you will find that as field1 is of primitive type, the values of it are copied to field2 but ContainedObject1 is an object, so MainObject2 is still pointing to ContainObject1. Therefore any changes made to ContainObject1 in MainObject1 will reflect in MainObject2.
 
 
 ### Deep Copy :
@@ -766,14 +768,7 @@ A deep copy copies all fields, and makes copies of dynamically allocated memory 
 </div>
 
 
-In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a deep copy of MainObject1, MainObject2 is created with "field3" containing the copied value of "field1" and "ContainObject2" containing the copied value of ContainObject1.So any changes made to ContainObject1 in MainObject1 will not reflect in MainObject2
-
-### Differences Between Shallow Copy and Deep Copy
-<div style="text-align:center">
-
-[![Java Data Types](/Java%20Notes/images/deepCopyVsShallowCopy.png)](https://github.com/ashwinkol/Notes/tree/main/)
-
-</div>
+In this figure, the MainObject1 have fields "field1" of int type, and "ContainObject1" of ContainObject type. When you do a deep copy of MainObject1, MainObject2 is created with "field2" containing the copied value of "field1" and "ContainObject2" containing the copied value of ContainObject1.So any changes made to ContainObject1 in MainObject1 will not reflect in MainObject2
 
 
 ## Example: 
@@ -837,4 +832,11 @@ Output:
 malla nareshit
 Programmer
 ```
+
+### Differences Between Shallow Copy and Deep Copy
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/deepCopyVsShallowCopy.png)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
 ---
