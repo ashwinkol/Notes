@@ -532,6 +532,10 @@ class Example {
 ## Rule for Calling Constructors
 Constructors must be called using the `new` keyword, otherwise, it leads to a compiler time error.
 
+```java
+Example obj1 = new Example();
+```
+
 **Q.** Can We Define a Method with the Same Class Name?
 
 Yes, it is allowed to define a method with the same class name. However, it is not recommended as per coding standards.
