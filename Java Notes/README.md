@@ -1000,4 +1000,88 @@ Runtime areas are where classes are executed by specifying their corresponding n
 - BootstrapClassLoader loads classes from the bootstrap classpath.
 
 
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/classloaderWorking.jpg)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+## ClassLoader working procedure :
+
+- When JVM comes across a type, it checks for that class byte codes in method area.
+
+- If it is already loaded, it makes use of that type. If it is not yet loaded, it requests classloader subclass loader subsystem to load that class's
+
+- byte codes in method area from the respective class path.
+
+- The class loader subsystem, first handsover this request to ApplicationClassLoader, then application loader will search for that class in the folders, configured in the classpath Environment variable. 
+
+- If the class is not found, it forwards this request to ExtenstionClassLoader, which then searches that class in ExtenstionClassLoader.
+
+- If the class is not found again, it forwards this request to BoostrapClasspath where it searches that class in BoostrapClasspath. java.lang.NoClassDefFoundError" or
+
+- If it is not found here too, jvm throws an exception " "java.lang.ClassNotFoundException". 
+
+- If class is found in any one of the classpaths, the respective classLoader loads that class into jvm's method area. 
+
+- Jvm then uses that loaded class bytecodes to complete the execution.
+
+## Thread and stackframe Architecture:
+
+- Thread is an independent sequential flow of execution created in JSA.
+
+- StackFrame is a sub block created inside a thread for executing a method or block, and is destroyed automatically after the completion of that method execution. 
+
+- If this method has any local variables, they are all also created inside that method's StackFrame, and are destroyed automatically when StackFrame is destroyed.
+
+
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/Stack%20Frame%20Archi.jpg)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+
+# Stackframe architecture:
+
+Stackframe is internally divided into three blocks to create that method's local variables, to store instructions, and to execute its logic. They are...
+
+1) Variable storage area.
+2) Instruction storage area.
+3) Method stacks.
+
+- All local variables are created in variable storage area. 
+
+- All method instructions are stored in instruction storage area.
+
+- Method logic is executed in method stack. To execute method logic, method stack is divided into number of blocks and each block is called a slot of size 32 bits.
+
+- Due to the slot size byte, short, char datatypes are automatically promoted to int datatype, when used in an expression. Therefore, the minimum result type coming out from an expression is int.
+
+
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/stackFrameArchitech.jpg)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+**Q.** What happens in jvm when we execute java command?
+
+- When java command is executed, jvm is created as a layer on top of OS, and is divided in 5 runtime areas as shown above. 
+
+- For executing the requested classes, jvm internally performs three phases They are :
+
+1) Classloading: Jvm requests class loader to load the class from its respective. classpath. Then class is loaded in method area by using java.lang.Class object memory.
+
+2) ByteCode verification phases: After classloading, BytecodeVerifies the loaded bytecode's internal format. If those byte codes are not in the jvm understandable format, it terminates execution process by throwing exception "java.lang.ClassFormatError". If loaded bytecodes are valid, it allows interpreter to execute those bytecodes. 
+
+3) Execution/interpretation phase: Interpreter then converts bytecodes into current OS understandable format. Finally, jvm generates output with the help of OS.
+
+<div style="text-align:center">
+
+[![Java Data Types](/Java%20Notes/images/jvmExeSteps.jpg)](https://github.com/ashwinkol/Notes/tree/main/)
+
+</div>
+
+
 ---
